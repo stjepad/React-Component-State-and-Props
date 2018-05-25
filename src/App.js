@@ -6,24 +6,21 @@ import Cohort from './cohort';
 import Name from './name';
 
 
-class Hannah extends Component {
-    constructor (props) {
-        /*
-            This is needed to properly initialize a React
-            component if you define a constructor
-        */
-        super(props)
+class Dejan extends Component {
+    state = {
 
-        // Set the initial state of the component
-        this.state = {
-
-            Name: "Dejan Stjepanović",
-            occupation: "Software Engineer",
-            bio: "Graduated NSS in cohort 13. Junior instructor as NSS for one year. Now kicking ass professionally.",
-            Address: "Muhhhfuckin Uuuuurfffff",
-            Cohort: "25"
+            Name: "",
+            occupation: "",
+            bio: "",
+            Address: "",
+            Cohort: ""
         }
-    }
+
+        componentDidMount() {
+            fetch("http://localhost:8088/people/1")
+            .then(response => response.json())
+            .then(Dejan => this.setState(Dejan))
+        }
 
     // Occupation and bio now sent to Bio as properties
     render() {
@@ -40,4 +37,4 @@ class Hannah extends Component {
     }
 }
 
-export default Hannah
+export default Dejan

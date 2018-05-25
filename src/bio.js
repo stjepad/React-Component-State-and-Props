@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import "./bio.css"
+
 
 /*
     Bio itself has no state since the Hannah component
@@ -8,7 +10,7 @@ import React, { Component } from 'react'
 class Bio extends Component {
     render() {
         return (
-            <div>
+            <div class="bio">
                 <p>Bio: {this.props.bio}</p>
             </div>
         )
